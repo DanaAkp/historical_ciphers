@@ -1,0 +1,54 @@
+﻿<Window x:Class="KMZI_laba1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KMZI_laba1"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" Height="450" Width="800">
+    <TabControl>
+        <TabItem Header="Шифр Цезаря">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Выберите язык алфавита: "/>
+                    <RadioButton x:Name="rbRUS" IsChecked="True" Content="Русский" GroupName="lang"/>
+                    <RadioButton x:Name="rbENG" Content="Английский" GroupName="lang"/>
+                </StackPanel>
+                <Button x:Name="btnOpenText" Content="Выбрать открытый текст" Margin="0,10,637.5,0" Click="btnOpenText_Click"/>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                    <Label Content="Введите ключ: "/>
+                    <TextBox x:Name="tbKeyEncrypt" Width="40"/>
+                    <Button Content="Зашифровать" x:Name="btnEncrypt" Margin="0,0,657,0" Click="btnEncrypt_Click"/>
+                </StackPanel>
+                <Button Margin="0,10,637.5,0" Content="Выбрать шифр текст" x:Name="btnCipherText" Click="btnCipherText_Click"/>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                    <Label Content="Введите ключ: "/>
+                    <TextBox x:Name="tbKey" Width="40"/>
+                    <Button Content="Расшифровать" x:Name="btnDecipher" Margin="0,0,657,0" Click="btnDecipher_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Расшифровать с закрытым ключом">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Выберите язык алфавита: "/>
+                    <RadioButton x:Name="rbRUSwithoutKey" IsChecked="True" Content="Русский" GroupName="langwithoutKey"/>
+                    <RadioButton x:Name="rbENGwithoutKey" Content="Английский" GroupName="langwithoutKey"/>
+                </StackPanel>
+                <Button x:Name="btnOpenCipherTxt" Click="btnOpenCipherTxt_Click"  Content="Шифр текст" Margin="0,0,657,0" />
+                <TextBox x:Name="tbCipherText" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="200" />
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnDecipherWithoutKey" Click="btnDecipherWithoutKey_Click" Content="Попробовать расшифровать" Margin="0,0,0,0" />
+                    <Button x:Name="btnDecipherAlltext" Click="btnDecipherAlltext_Click" Content="Расшифровать весь текст" Margin="10,0,618,0" Width="171" />
+                </StackPanel>
+                <TextBox x:Name="tblDecipher" TextWrapping="Wrap" Height="200"/>
+               </StackPanel>
+        </TabItem>
+        <TabItem Header="Шифр">
+            <StackPanel>
+                <Button x:Name="btnOpenNewWIn" Content="Открыть Шифр Виженера" Height="50" Width="200" Margin="0,20,0,20" Click="btnOpenNewWIn_Click"/>
+                <Button x:Name="btnOpenNewWinPere" Content="Открыть Шифр перестановками" Height="50" Width="200" Click="btnOpenNewWinPere_Click"/>
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+</Window>
